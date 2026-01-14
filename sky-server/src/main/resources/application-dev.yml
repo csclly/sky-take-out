@@ -11,3 +11,8 @@ sky:
     bucket-name: cangqiongwaimai-csclly
     access-key-id: LTAI5tDFta4VtADqun6J8h9a
     access-key-secret: 0k30fONrEvaPABAquNcHXclsXgPGPC
+  redis:
+    host: localhost
+    port: 6379
+    password: 123456
+    database: 0
