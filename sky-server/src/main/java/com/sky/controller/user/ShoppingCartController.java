@@ -56,4 +56,17 @@ public class ShoppingCartController {
         return Result.success();
 
     }
+
+    /**
+     * 菜品数量减少
+     * @return
+     */
+    @PostMapping("/sub")
+    @ApiOperation("菜品数量减少")
+    public Result sub(@RequestBody ShoppingCartDTO shoppingCartDTO){
+        log.info("菜品数量减少: {}", shoppingCartDTO);
+        shoppingCartService.sub(shoppingCartDTO);
+        return Result.success();
+
+    }
 }

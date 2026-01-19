@@ -4,6 +4,7 @@
 <mapper namespace="com.sky.mapper.ShoppingCartMapper">
 
 
+
     <select id="list" resultType="com.sky.entity.ShoppingCart">
         select * from shopping_cart
             <where>
@@ -21,4 +22,11 @@
                 </if>
             </where>
     </select>
+
+    <delete id="deleteByIds">
+        delete from shopping_cart where id in
+        <foreach collection="ids" item="id" open="(" close=")" separator=",">
+            #{id}
+        </foreach>
+    </delete>
 </mapper>
