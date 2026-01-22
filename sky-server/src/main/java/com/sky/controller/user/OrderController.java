@@ -92,19 +92,6 @@ public class OrderController {
         return Result.success();
     }
 
-//    /**
-//     * 催单
-//     * @param id
-//     * @return
-//     */
-//    @GetMapping("/reminder/{id}")
-//    @ApiOperation("催单")
-//    public Result reminderOrder(@PathVariable Long id){
-//        log.info("催单：{}", id);
-//        orderService.reminderOrder(id);
-//        return Result.success();
-//    }
-
     /**
      * 再来一单
      * @return
@@ -114,6 +101,20 @@ public class OrderController {
     public Result repetitionOrder(@PathVariable Long id){
         log.info("再来一单：{}", id);
         orderService.repetitionOrder(id);
+        return Result.success();
+    }
+
+
+    /**
+     * 客户催单
+     * @param id
+     * @return
+     */
+    @GetMapping("/reminder/{id}")
+    @ApiOperation("催单")
+    public Result reminderOrder(@PathVariable Long id){
+        log.info("催单：{}", id);
+        orderService.reminderOrder(id);
         return Result.success();
     }
 }
